@@ -29,8 +29,7 @@ export class NotifySocket extends SocketBase {
     protected onMessage(messageBuffer: Buffer, remote: dgram.AddressInfo) {
         const message = new Message(remote.address, messageBuffer);
 
-        if (message.method !== 'NOTIFY * HTTP/1.1' ||
-            message.nt !== 'urn:axis-com:service:BasicService:1') {
+        if (message.method !== 'NOTIFY * HTTP/1.1') {
             return;
         }
 
