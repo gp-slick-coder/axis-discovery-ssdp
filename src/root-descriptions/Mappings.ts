@@ -5,9 +5,11 @@ import { RootDescription } from './../root-descriptions/RootDescription';
  * Maps a root description to a device.
  */
 export function mapFromRootDescription(rootDescription: RootDescription): Device | null {
-    if (rootDescription.macAddress === undefined) {
-        return null;
-    }
+
+    // this is not available on generic upnp devices
+    // if (rootDescription.macAddress === undefined) {
+    //     return null;
+    // }
 
     return new Device(
         rootDescription.remoteAddress,

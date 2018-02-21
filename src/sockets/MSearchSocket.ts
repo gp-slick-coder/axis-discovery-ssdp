@@ -20,10 +20,10 @@ export class MSearchSocket extends SocketBase {
     /**
      * Starts a search by using HTTP method M-SEARCH.
      */
-    public search(): Promise<void> {
+    public search(target: string): Promise<void> {
         log('MSearchSocket#search - %s', this.address);
 
-        const message = new MSearch().toBuffer();
+        const message = new MSearch(target).toBuffer();
 
         return new Promise<void>((resolve, reject) => {
             this.socket.send(

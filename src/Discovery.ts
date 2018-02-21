@@ -51,14 +51,16 @@ export class Discovery {
     /**
      * Triggers a new search for devices on the network.
      */
-    public async search(): Promise<void> {
+    public async search(target?: string): Promise<void> {
         expect.toExist(this.sockets, 'Discovery has not been started');
+
+        const t = target ? target : 'ssdp:all';
 
         log('Discovery#search');
 
         for (const socket of this.sockets!) {
             if (socket instanceof MSearchSocket) {
-                await socket.search();
+                await socket.search(t);
             }
         }
     }

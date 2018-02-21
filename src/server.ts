@@ -1,3 +1,4 @@
+import { setTimeout } from 'timers';
 import { Device, Discovery } from './';
 
 const discovery = new Discovery();
@@ -13,4 +14,8 @@ discovery.onGoodbye((device: Device) => {
 });
 
 discovery.start()
-    .then(() => discovery.search());
+    .then(() => discovery.search('urn:schemas-upnp-org:device:MediaServer:1'));
+
+setTimeout(() => {
+    discovery.stop();
+}, 2000);
