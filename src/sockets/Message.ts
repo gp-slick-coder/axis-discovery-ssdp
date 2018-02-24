@@ -22,7 +22,7 @@ export class Message {
      * Gets the URL to the UPnP description of the root device.
      */
     get location(): string {
-        return this.getHeaderValue('LOCATION');
+        return this.getHeaderValue('LOCATION') ? this.getHeaderValue('LOCATION') : this.getHeaderValue('Location');
     }
 
     /**
@@ -70,11 +70,6 @@ export class Message {
 
     private getHeaderValue(headerName: string): string {
         const headerValue = this.headers[headerName];
-
-        if (!headerValue) {
-            throw new Error(`Header with name ${headerName} does not exist.`);
-        }
-
         return headerValue;
     }
 }

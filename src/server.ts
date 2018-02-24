@@ -4,9 +4,13 @@ import { Device, Discovery } from './';
 const discovery = new Discovery();
 
 discovery.onHello((device: Device) => {
-    console.log(`${new Date().toLocaleTimeString()} - Hello from ${device.macAddress} on ${device.address}`);
-    console.log(`\tport: ${device.port}`);
-    console.log(`\tmodel: ${device.modelName}`);
+    if (device.macAddress) {
+        console.log(`${new Date().toLocaleTimeString()} - Hello from ${device.macAddress} on ${device.address}`);
+    } else {
+        console.log(`${new Date().toLocaleTimeString()} - Hello from ${device.friendlyName} on ${device.address}`);
+        console.log(`\tmodel: ${device.modelName}`);
+        // console.log('Full data', JSON.stringify(device));
+    }
 });
 
 discovery.onGoodbye((device: Device) => {
@@ -14,8 +18,9 @@ discovery.onGoodbye((device: Device) => {
 });
 
 discovery.start()
-    .then(() => discovery.search('urn:schemas-upnp-org:device:MediaServer:1'));
+    // .then(() => discovery.search('urn:schemas-upnp-org:device:MediaServer:1'));
+    .then(() => discovery.search());
 
 setTimeout(() => {
     discovery.stop();
-}, 2000);
+}, 3000);

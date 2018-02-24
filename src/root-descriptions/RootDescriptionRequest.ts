@@ -13,6 +13,6 @@ export class RootDescriptionRequest {
         log('RootDescriptionRequest#send - %s', this.remoteAddress);
 
         const body = await this.httpClient.get(this.location);
-        return RootDescription.parse(this.remoteAddress, body);
+        return RootDescription.parse(this.location, body);
     }
 }
