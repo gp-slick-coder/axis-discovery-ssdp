@@ -1,6 +1,10 @@
 import { setTimeout } from 'timers';
 import { Device, Discovery } from './';
 
+// https://github.com/visionmedia/debug
+import * as debug from 'debug';
+debug.enable('*');
+
 const discovery = new Discovery();
 
 discovery.onHello((device: Device) => {

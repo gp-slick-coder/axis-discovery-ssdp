@@ -23,4 +23,4 @@ export function mapFromMessage(message: Message): Device | null {
         undefined);
 }
 
-const macAddressRegExp = /^uuid:.*([0-9a-f]{12})::.*$/i;
+const macAddressRegExp = /^uuid:[.]*(.+)::.*$/i;
