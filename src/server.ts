@@ -8,13 +8,9 @@ debug.enable('*');
 const discovery = new Discovery();
 
 discovery.onHello((device: Device) => {
-    if (device.macAddress) {
-        console.log(`${new Date().toLocaleTimeString()} - Hello from ${device.macAddress} on ${device.address}`);
-    } else {
         console.log(`${new Date().toLocaleTimeString()} - Hello from ${device.friendlyName} on ${device.address}`);
         console.log(`\tmodel: ${device.modelName}`);
         // console.log('Full data', JSON.stringify(device));
-    }
 });
 
 discovery.onGoodbye((device: Device) => {
