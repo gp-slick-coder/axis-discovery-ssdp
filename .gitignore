@@ -14,7 +14,7 @@ test/**/*.js
 **/*.tgz
 
 ## Deliverables directory
-lib
+## (needed on npm:git) lib
 
 ## Code coverage
 coverage
