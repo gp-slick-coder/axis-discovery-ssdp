@@ -28,9 +28,8 @@
   },
   "scripts": {
     "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",    
-    "prebuild": "yarn install",
-    "build": "tsc",
-    "postbuild": "cpx \"./src/**/*.{d.ts,js}\" ./lib/",
+    "prebuild": "yarn clean",
+    "build": "tsc",    
     "prestart": "yarn build",
     "start": "node ./src/server.js",
     "pretest": "yarn build",
