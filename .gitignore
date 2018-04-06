@@ -2,7 +2,6 @@
 **/node_modules/*
 
 ## TypeScript
-**/*.d.ts
 **/*.js.map
 
 ## Compiled JavaScript
