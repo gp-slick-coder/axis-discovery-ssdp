@@ -27,9 +27,8 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",
-    "preinstall": "yarn install",
-    "prebuild": "yarn clean",
+    "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",    
+    "prebuild": "yarn install",
     "build": "tsc",
     "postbuild": "cpx \"./src/**/*.{d.ts,js}\" ./lib/",
     "prestart": "yarn build",
