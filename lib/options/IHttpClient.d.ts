@@ -9,3 +9,4 @@ export interface IHttpClient {
      */
     get(url: string): Promise<string>;
 }
+//# sourceMappingURL=IHttpClient.d.ts.map

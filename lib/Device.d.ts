@@ -54,40 +54,41 @@ export declare class Device {
      * @param presentationURL The URL to the web page of the device.
      */
     constructor(
-        /**
-         * Gets the address.
-         */
-        address: string, 
-        /**
-         * Gets the port.
-         */
-        port: number | undefined, 
-        /**
-         * Gets the MAC address. In most situations this is identical to the
-         * serial number. The exceptions are the Axis products which bundle
-         * multiple physical devices into a single casing with a shared network
-         * interface. Because of the shared network interface they also share
-         * the same MAC address.
-         */
-        macAddress: string | undefined, 
-        /**
-         * Gets the short description for the end user.
-         */
-        friendlyName: string | undefined, 
-        /**
-         * Gets the model name.
-         */
-        modelName: string | undefined, 
-        /**
-         * Gets the long model description for the end user.
-         */
-        modelDescription: string | undefined, 
-        /**
-         * Gets the model number.
-         */
-        modelNumber: string | undefined, 
-        /**
-         * Gets the URL to the web page of the device.
-         */
-        presentationURL: string | undefined);
+    /**
+     * Gets the address.
+     */
+    address: string, 
+    /**
+     * Gets the port.
+     */
+    port: number | undefined, 
+    /**
+     * Gets the MAC address. In most situations this is identical to the
+     * serial number. The exceptions are the Axis products which bundle
+     * multiple physical devices into a single casing with a shared network
+     * interface. Because of the shared network interface they also share
+     * the same MAC address.
+     */
+    macAddress: string | undefined, 
+    /**
+     * Gets the short description for the end user.
+     */
+    friendlyName: string | undefined, 
+    /**
+     * Gets the model name.
+     */
+    modelName: string | undefined, 
+    /**
+     * Gets the long model description for the end user.
+     */
+    modelDescription: string | undefined, 
+    /**
+     * Gets the model number.
+     */
+    modelNumber: string | undefined, 
+    /**
+     * Gets the URL to the web page of the device.
+     */
+    presentationURL: string | undefined);
 }
+//# sourceMappingURL=Device.d.ts.map

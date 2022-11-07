@@ -7,3 +7,4 @@ export declare class RootDescriptionRequest {
     constructor(remoteAddress: string, location: string, httpClient: IHttpClient);
     send(): Promise<RootDescription>;
 }
+//# sourceMappingURL=RootDescriptionRequest.d.ts.map

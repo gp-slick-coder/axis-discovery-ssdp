@@ -3,10 +3,11 @@ export declare class RootDescription {
     private readonly rootDescription;
     private constructor();
     static parse(remoteAddress: string, xml: string): Promise<RootDescription>;
-    readonly friendlyName: string;
-    readonly modelDescription: string | undefined;
-    readonly modelName: string;
-    readonly modelNumber: string | undefined;
-    readonly macAddress: string | undefined;
-    readonly presentationUrl: string | undefined;
+    get friendlyName(): string;
+    get modelDescription(): string | undefined;
+    get modelName(): string;
+    get modelNumber(): string | undefined;
+    get macAddress(): string | undefined;
+    get presentationUrl(): string | undefined;
 }
+//# sourceMappingURL=RootDescription.d.ts.map

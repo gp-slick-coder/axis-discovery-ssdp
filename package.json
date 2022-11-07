@@ -27,13 +27,17 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",    
+    "clean": "rimraf \"./+(src|test)/**/*.+(d.ts|js|js.map)\" ./lib ./coverage",
     "prebuild": "yarn clean",
-    "build": "tsc",    
+    "build": "tsc -b",
     "prestart": "yarn build",
     "start": "node ./src/server.js",
-    "pretest": "yarn build",
-    "lint": "tslint \"./src/**/*.ts\" --exclude \"./**/*.d.ts\""
+    "test": "jest",
+    "lint": "tslint \"./src/**/*.ts\" --exclude \"./**/*.d.ts\"",
+    "coverage": "jest --coverage && coveralls < coverage/lcov.info",
+    "prepack": "yarn build",
+    "preversion": "git add ./CHANGELOG.md",
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {
     "@fantasticfiasco/expect": "1.*",

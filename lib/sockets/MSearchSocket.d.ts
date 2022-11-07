@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import * as dgram from 'dgram';
+import { AddressInfo } from 'net';
 import { SocketBase } from './SocketBase';
 /**
  * Class representing a SSDP socket that support the HTTP method M-SEARCH.
@@ -15,6 +15,7 @@ export declare class MSearchSocket extends SocketBase {
      */
     search(target: string): Promise<void>;
     protected onListening(): void;
-    protected onMessage(messageBuffer: Buffer, remote: dgram.AddressInfo): void;
+    protected onMessage(messageBuffer: Buffer, remote: AddressInfo): void;
     protected bind(): Promise<void>;
 }
+//# sourceMappingURL=MSearchSocket.d.ts.map

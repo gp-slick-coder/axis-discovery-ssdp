@@ -13,3 +13,4 @@ export declare class MSearch {
      */
     toBuffer(): Buffer;
 }
+//# sourceMappingURL=MSearch.d.ts.map

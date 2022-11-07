@@ -13,3 +13,4 @@ export interface IOptions {
      */
     httpClient?: IHttpClient;
 }
+//# sourceMappingURL=IOptions.d.ts.map

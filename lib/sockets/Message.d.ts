@@ -9,23 +9,24 @@ export declare class Message {
     /**
      * Gets the HTTP method.
      */
-    readonly method: string;
+    get method(): string;
     /**
      * Gets the URL to the UPnP description of the root device.
      */
-    readonly location: string;
+    get location(): string;
     /**
      * Gets the Unique Service Name (USN) header.
      */
-    readonly usn: string;
+    get usn(): string;
     /**
      * Gets the Notification Type (NT) header.
      */
-    readonly nt: string;
+    get nt(): string;
     /**
      * Gets the Notification Sub Type (NTS).
      */
-    readonly nts: string;
-    private parseHeaders(message);
-    private getHeaderValue(headerName);
+    get nts(): string;
+    private parseHeaders;
+    private getHeaderValue;
 }
+//# sourceMappingURL=Message.d.ts.map
