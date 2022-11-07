@@ -1,9 +1,59 @@
 # Change Log
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [6.0.0] - 2020-10-11
+
+### :dizzy: Changed
+
+- [BREAKING CHANGE] Renamed method `Discovery.onHello(callback: (device: Device) => void)` to `Discovery.on("hello", (device: Device) => void)`
+- [BREAKING CHANGE] Renamed method `Discovery.onGoodbye(callback: (device: Device) => void)` to `Discovery.on("goodbye", (device: Device) => void)`
+
+### :zap: Added
+
+- Class `Discovery` implements `EventEmitter`
+
+## [5.0.6] - 2020-03-09
+
+### :syringe: Fixed
+
+- Add membership to port 1900 might throw error if already in use by another process
+
+## [5.0.5] - 2019-12-27
+
+### :policeman: Security
+
+- Security vulnerability in transient dependency `handlebars`
+
+## [5.0.4] - 2019-07-14
+
+### :policeman: Security
+
+- Security vulnerability in transient dependency `diff`
+- Security vulnerability in transient dependency `lodash`
+
+## [5.0.3] - 2019-06-07
+
+### :policeman: Security
+
+- Security vulnerability in transient dependency `handlebars`
+- Security vulnerability in transient dependency `js-yaml`
+
+## [5.0.2] - 2019-03-09
+
+### :policeman: Security
+
+- Security vulnerability in transient dependency `sshpk`
+
+## [5.0.1] - 2019-01-07
+
+### :syringe: Fixed
+
+- Update dependencies
 
 ## [5.0.0] - 2017-12-22
 
@@ -49,7 +99,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### :zap: Added
 
-- [#2](https://github.com/FantasticFiasco/axis-discovery-ssdp/issues/2) - Calling `Discovery.stop()` stops listening for SSDP advertisements
+- [#2](https://github.com/FantasticFiasco/axis-discovery-ssdp-js/issues/2) - Calling `Discovery.stop()` stops listening for SSDP advertisements
 
 ### :dizzy: Changed
 
@@ -59,7 +109,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### :syringe: Fixed
 
-- [#40](https://github.com/FantasticFiasco/axis-discovery-ssdp/issues/40) - Calling `Discovery.search()` didn't trigger a new search
+- [#40](https://github.com/FantasticFiasco/axis-discovery-ssdp-js/issues/40) - Calling `Discovery.search()` didn't trigger a new search
 
 ## [1.0.1] - 2016-12-06
 

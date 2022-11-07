@@ -1,9 +1,9 @@
-import * as dgram from 'dgram';
-
-import { log } from '../logging';
-import { SSDP_MULTICAST_ADDRESS, SSDP_PORT } from './Constants';
-import { Message } from './Message';
-import { SocketBase } from './SocketBase';
+import * as expect from '@fantasticfiasco/expect'
+import { AddressInfo } from 'net'
+import { log } from '../logging'
+import { SSDP_MULTICAST_ADDRESS, SSDP_PORT } from './Constants'
+import { Message } from './Message'
+import { SocketBase } from './SocketBase'
 
 /**
  * Class representing a SSDP socket that support the HTTP method NOTIFY.
@@ -18,15 +18,21 @@ export class NotifySocket extends SocketBase {
     }
 
     protected onListening() {
-        log('NotifySocket#onListening - %s:%d', this.socket.address().address, this.socket.address().port);
+        expect.toExist(this.socket, 'Notify socket has never been started');
+
+        log('NotifySocket#onListening - %s:%d', (this.socket!.address() as AddressInfo).address, (this.socket!.address() as AddressInfo).port);
 
         for (const address of this.addresses) {
             log('NotifySocket#onListening - add membership to %s', address);
-            this.socket.addMembership(SSDP_MULTICAST_ADDRESS, address);
+            try {
+                this.socket!.addMembership(SSDP_MULTICAST_ADDRESS, address);
+            } catch (error) {
+                log('NotifySocket#onListening - %o', error);
+            }
         }
     }
 
-    protected onMessage(messageBuffer: Buffer, remote: dgram.AddressInfo) {
+    protected onMessage(messageBuffer: Buffer, remote: AddressInfo) {
         const message = new Message(remote.address, messageBuffer);
 
         if (message.method !== 'NOTIFY * HTTP/1.1') {
@@ -41,8 +47,10 @@ export class NotifySocket extends SocketBase {
     }
 
     protected bind(): Promise<void> {
+        expect.toExist(this.socket, 'Notify socket has never been started');
+
         return new Promise<void>((resolve) => {
-            this.socket.bind(SSDP_PORT, undefined, () => resolve());
+            this.socket!.bind(SSDP_PORT, undefined, () => resolve());
         });
     }
 }

@@ -1,6 +1,6 @@
-import { IHttpClient } from '../options';
-import { log } from './../logging';
-import { RootDescription } from './RootDescription';
+import { IHttpClient } from '../options'
+import { log } from './../logging'
+import { RootDescription } from './RootDescription'
 
 export class RootDescriptionRequest {
     constructor(
@@ -13,6 +13,6 @@ export class RootDescriptionRequest {
         log('RootDescriptionRequest#send - %s', this.remoteAddress);
 
         const body = await this.httpClient.get(this.location);
-        return RootDescription.parse(this.location, body);
+        return RootDescription.parse(this.remoteAddress, body);
     }
 }

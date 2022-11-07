@@ -1,26 +1,10 @@
-## Source code
-src
-test
-.gitattributes
+# Start with excluding everything
+*
 
-## Visual Studio Code settings
-.vscode
-
-## Documentation
-doc
-
-## NPM
-.npmignore
-*.tgz
-
-## Build files
-.travis.yml
-tsconfig.json
-tslint.json
-
-## Tests
-**/*.spec.js
-**/*.spec.d.ts
-
-## Code coverage
-coverage
+# Then include only the necessary files
+!lib/**/*.js
+!lib/**/*.d.ts
+!CHANGELOG.md
+!LICENSE
+!package.json
+!README.md
