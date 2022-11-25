@@ -261,6 +261,9 @@ export class Discovery implements EventEmitter {
 
         const device = mapFromMessage(message);
         if (device) {
+            // Emit initial hello
+            this.eventEmitter.emit('hello', device);
+
             // Request root description
             this.requestRootDescription(message.remoteAddress, message.location);
         } else {
