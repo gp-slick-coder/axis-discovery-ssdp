@@ -13,7 +13,7 @@ export function mapFromRootDescription(rootDescription: RootDescription): Device
 
     return new Device(
         rootDescription.remoteAddress,
-        parsePort(rootDescription.remoteAddress),
+        parsePortFromPresentationUrl(rootDescription.presentationUrl),
         rootDescription.macAddress,
         rootDescription.friendlyName,
         rootDescription.modelName,
@@ -25,7 +25,7 @@ export function mapFromRootDescription(rootDescription: RootDescription): Device
 
 const portFromPresentationUrlRegExp = /:(\d+)\/?$/i;
 
-function parsePort(presentationUrl: string | undefined): number | undefined {
+function parsePortFromPresentationUrl(presentationUrl: string | undefined): number | undefined {
     if (presentationUrl === undefined) {
         return undefined;
     }

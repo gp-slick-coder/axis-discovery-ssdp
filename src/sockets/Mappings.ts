@@ -1,5 +1,5 @@
-import { Device } from './..';
-import { Message } from './Message';
+import { Device } from './..'
+import { Message } from './Message'
 
 /**
  * Maps a SSDP message to a device.
@@ -12,7 +12,7 @@ export function mapFromMessage(message: Message): Device | null {
 
     const macAddress = macAddressMatch[1].toUpperCase();
 
-    return new Device(message.remoteAddress, undefined, macAddress, undefined, undefined, undefined, undefined, undefined);
+    return new Device(message.location, undefined, macAddress, undefined, undefined, undefined, undefined, undefined);
 }
 
 const macAddressRegExp = /^uuid:[.]*(.+)::.*$/i;
