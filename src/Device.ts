@@ -33,8 +33,8 @@ export class Device {
          * interface. Because of the shared network interface they also share
          * the same MAC address.
          */
-        readonly macAddress: string,
-        /**
+         readonly macAddress: string | undefined,
+         /**
          * Gets the short description for the end user.
          */
         readonly friendlyName: string | undefined,

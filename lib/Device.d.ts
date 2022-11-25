@@ -19,8 +19,8 @@ export declare class Device {
      */
     readonly macAddress: string | undefined;
     /**
-     * Gets the short description for the end user.
-     */
+    * Gets the short description for the end user.
+    */
     readonly friendlyName: string | undefined;
     /**
      * Gets the model name.
@@ -71,8 +71,8 @@ export declare class Device {
      */
     macAddress: string | undefined, 
     /**
-     * Gets the short description for the end user.
-     */
+    * Gets the short description for the end user.
+    */
     friendlyName: string | undefined, 
     /**
      * Gets the model name.
