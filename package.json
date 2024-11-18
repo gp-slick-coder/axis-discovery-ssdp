@@ -42,7 +42,7 @@
   "dependencies": {
     "@fantasticfiasco/expect": "1.*",
     "debug": "4.*",
-    "request": ">2.68.0",
+    "request": "^2.88.2",
     "xml2js": "0.*"
   },
   "devDependencies": {
